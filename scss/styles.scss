@@ -289,23 +289,22 @@ i {
     align-items: baseline;
   }
 
-  li {
-    a {
-      text-decoration: none;
-      color: $gris-claro;
-      width: 100%;
-      font-size: 1.3rem;
-      &:hover {
-        color: $amarillo-contraste;
-        text-decoration: underline;
-      }
-    }
-  }
-
   ul {
     width: 100%;
     margin-left: 22rem;
     gap: 1rem;
+    li {
+      a {
+        text-decoration: none;
+        color: $gris-claro;
+        width: 100%;
+        font-size: 1.3rem;
+        &:hover {
+          color: $amarillo-contraste;
+          text-decoration: underline;
+        }
+      }
+    }
   }
 
   .container {

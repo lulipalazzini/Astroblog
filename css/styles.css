@@ -263,20 +263,20 @@ i {
     display: flex;
     align-items: baseline;
   }
-  li a {
+  ul {
+    width: 100%;
+    margin-left: 22rem;
+    gap: 1rem;
+  }
+  ul li a {
     text-decoration: none;
     color: #e4e4e4;
     width: 100%;
     font-size: 1.3rem;
   }
-  li a:hover {
+  ul li a:hover {
     color: #f9a826;
     text-decoration: underline;
-  }
-  ul {
-    width: 100%;
-    margin-left: 22rem;
-    gap: 1rem;
   }
   .container {
     padding-left: 4rem;
