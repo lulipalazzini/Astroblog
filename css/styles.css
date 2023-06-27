@@ -1,3 +1,4 @@
+@keyframes escalar_palabra {}
 * {
   padding: 0;
   margin: 0;
@@ -14,12 +15,12 @@ body {
 /* ESTILO HEADER */
 nav {
   width: 100vw;
+  position: sticky;
+  top: 0;
 }
 
 header {
   background-color: #3f3d56;
-  position: sticky;
-  top: 0;
   width: 100%;
 }
 
@@ -31,8 +32,7 @@ ul {
   list-style-type: none;
   text-align: center;
 }
-
-li > a {
+ul li a {
   text-decoration: none;
   color: #e4e4e4;
   font-size: 1rem;
@@ -41,12 +41,11 @@ li > a {
 
 .navbar-toggler {
   background-color: #747384;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-right: 0.5rem;
 }
 
 /* FIN ESTILO HEADER */
-
 #portada__foto {
   width: 100%;
 }
@@ -136,27 +135,25 @@ img {
   font-weight: bold;
   width: 6rem;
 }
-
 .newsletter__enviar:hover {
   background-color: #f9a826;
   color: #3f3d56;
 }
 
 /* ESTILOS SIGNOS, CASAS Y PLANETAS */
-.contenedor > div > a {
+.contenedor div a {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   padding-bottom: 2rem;
 }
-
-.contenedor > div > a > img {
+.contenedor div a img {
   height: 15rem;
   width: 15rem;
 }
 
-div > a {
+div a {
   text-decoration: none;
   color: #3f3d56;
   font-size: 1.5rem;
@@ -166,8 +163,8 @@ div > a {
   overflow: visible;
   color: #3f3d56;
 }
-/* FIN SIGNOS, CASAS Y PLANETAS */
 
+/* FIN SIGNOS, CASAS Y PLANETAS */
 /* ESTILO CONTACTO */
 .contacto__formu {
   padding-bottom: 1rem;
@@ -215,8 +212,8 @@ textarea {
   padding-bottom: 3em;
   padding-top: 1em;
 }
-/* FIN CONTACTO */
 
+/* FIN CONTACTO */
 /* ESTILO FOOTER */
 footer {
   background-color: #3f3d56;
@@ -224,6 +221,10 @@ footer {
   padding: 2rem 1rem;
   text-align: center;
   width: 100%;
+}
+footer h4 {
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
 .links {
@@ -233,7 +234,6 @@ footer {
   display: block;
   font-size: 1.2rem;
 }
-
 .links:hover {
   color: #f9a826;
 }
@@ -242,33 +242,20 @@ i {
   padding-right: 0.5rem;
 }
 
-footer h4 {
-  padding-bottom: 0.5rem;
-  font-size: 1rem;
-}
 /* FIN ESTILO FOOTER */
-
 /* Estilos tablet */
 @media (min-width: 768px) {
   /* ESTILOS SIGNOS, CASAS Y PLANETAS */
   .contenedor {
     display: grid;
-    grid-template-areas:
-      "uno dos"
-      "tres cuatro"
-      "cinco seis"
-      "siete ocho"
-      "nueve diez"
-      "once doce";
+    grid-template-areas: "uno dos" "tres cuatro" "cinco seis" "siete ocho" "nueve diez" "once doce";
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 1fr);
   }
-
   .newsletter__mail {
     width: 25rem;
   }
 }
-
 /* Estilos desktop */
 @media (min-width: 1200px) {
   /* ESTILO HEADER */
@@ -276,55 +263,56 @@ footer h4 {
     display: flex;
     align-items: baseline;
   }
-
-  li > a {
+  li a {
     text-decoration: none;
     color: #e4e4e4;
-    font-size: 1.5rem;
     width: 100%;
+    font-size: 1.3rem;
   }
-
+  li a:hover {
+    color: #f9a826;
+    text-decoration: underline;
+  }
   ul {
     width: 100%;
     margin-left: 22rem;
     gap: 1rem;
   }
-
-  ul:hover a:hover {
-    color: #f9a826;
-    text-decoration: underline;
-  }
-
   .container {
     padding-left: 4rem;
   }
-
   /* ESTILO NEWSLETTER */
   .newsletter__titulo {
     font-size: 3rem;
   }
-
   .newsletter__subtitulo {
     font-size: 2rem;
   }
-
   .newsletter__mail {
     width: 30rem;
   }
-
   /* ESTILOS SIGNOS, CASAS Y PLANETAS */
   .contenedor {
     display: grid;
-    grid-template-areas:
-      "uno dos tres"
-      "cuatro cinco seis"
-      "siete ocho nueve"
-      "diez once doce";
+    grid-template-areas: "uno dos tres" "cuatro cinco seis" "siete ocho nueve" "diez once doce";
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
     row-gap: 1rem;
   }
-
+  @keyframes deslizar-arriba {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-50px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .contenedor__animacion:hover {
+    animation: deslizar-arriba 3s normal infinite;
+  }
   /* ESTILO CONTACTO */
   .contacto {
     display: grid;
@@ -333,34 +321,33 @@ footer h4 {
     justify-items: center;
     align-items: center;
   }
-
   .contacto__botones:hover {
     background-color: #f9a826;
     color: #3f3d56;
     font-weight: bold;
   }
-
   .contacto__img {
     max-width: 60vw;
   }
-
   /* ESTILO FOOTER */
   .links {
     display: inline;
   }
 }
-
 /* Comienzo descripcion grid area */
 .contenedor__uno {
   grid-area: uno;
+  margin-top: 50px;
 }
 
 .contenedor__dos {
   grid-area: dos;
+  margin-top: 50px;
 }
 
 .contenedor__tres {
   grid-area: tres;
+  margin-top: 50px;
 }
 
 .contenedor__cuatro {
@@ -398,4 +385,7 @@ footer h4 {
 .contenedor__doce {
   grid-area: doce;
 }
+
 /*Fin descripcion grid area*/
+
+/*# sourceMappingURL=styles.css.map */
